@@ -601,6 +601,7 @@
 #include "code\datums\gamemodes\hvh.dm"
 #include "code\datums\gamemodes\infestation.dm"
 #include "code\datums\gamemodes\nuclear_war.dm"
+#include "code\datums\gamemodes\distress_signal.dm"
 #include "code\datums\gamemodes\objective.dm"
 #include "code\datums\gamemodes\objective_items.dm"
 #include "code\datums\gamemodes\sensor_capture.dm"
