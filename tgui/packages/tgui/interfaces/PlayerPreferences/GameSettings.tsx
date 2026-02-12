@@ -325,6 +325,21 @@ export const GameSettings = (props) => {
                 rightLabel={'Disabled'}
               />
               <ToggleFieldPreference
+                label="Translate messages"
+                value="translate_messages"
+                action="translate_messages"
+                leftValue={1}
+                leftLabel={'Enabled'}
+                rightValue={0}
+                rightLabel={'Disabled'}
+                tooltip="Automatically translate messages you understand into your selected language."
+              />
+              <SelectFieldPreference
+                label="Your language (translate into)"
+                value="translation_language"
+                action="translation_language"
+              />
+              <ToggleFieldPreference
                 label="Toggle bump attacking"
                 value="toggle_bump_attacking"
                 action="toggle_bump_attacking"

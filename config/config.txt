@@ -47,6 +47,12 @@ ALLOW_SHUTDOWN
 #TTS_VOICE_BLACKLIST Sans Undertale
 #TTS_VOICE_BLACKLIST Papyrus Undertale
 
+## LibreTranslate base URL for chat translation (example: http://localhost:5000)
+LIBRETRANSLATE_URL http://localhost:5000
+
+## LibreTranslate API key (if your instance requires one)
+#LIBRETRANSLATE_API_KEY
+
 ## If you use /tg/station-server 3 and you want to allow the shutdown server verb,
 ##	the server needs to be able to tell tgs3 that the shutdown is not a crash.
 ## This should be the path to the TGCommandLine.exe program in your tgstation-server install.

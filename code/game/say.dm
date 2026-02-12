@@ -47,13 +47,13 @@ GLOBAL_LIST_INIT(freqtospan, list(
 
 /atom/movable/proc/send_speech(message, range = 7, obj/source = src, bubble_type, list/spans, datum/language/message_language, message_mode, tts_message, list/tts_filter)
 	var/found_client = FALSE
-	var/rendered = compose_message(src, message_language, message, , spans, message_mode)
 	var/list/listeners = get_hearers_in_view(range, source)
 	var/list/listened = list()
 	for(var/atom/movable/hearing_movable as anything in listeners)
 		if(!hearing_movable)//theoretically this should use as anything because it shouldnt be able to get nulls but there are reports that it does.
 			stack_trace("somehow theres a null returned from get_hearers_in_view() in send_speech!")
 			continue
+		var/rendered = hearing_movable.compose_message(src, message_language, message, , spans, message_mode)
 		if(hearing_movable.Hear(rendered, src, message_language, message, , spans, message_mode))
 			listened += hearing_movable
 		if(!found_client && length(hearing_movable.client_mobs_in_contents))
@@ -190,12 +190,41 @@ GLOBAL_LIST_INIT(freqtospan, list(
 #undef ENCODE_HTML_EPHASIS
 
 
+/atom/movable/proc/should_translate_messages()
+	if(ismob(src))
+		var/mob/M = src
+		var/datum/preferences/P = M.client?.prefs
+		if(P)
+			return P.translate_messages
+	return FALSE
+
+/atom/movable/proc/get_translation_language()
+	if(ismob(src))
+		var/mob/M = src
+		var/datum/preferences/P = M.client?.prefs
+		if(P?.translation_language)
+			return P.translation_language
+	return "en"
+
 /atom/movable/proc/lang_treat(atom/movable/speaker, datum/language/language, raw_message, list/spans, message_mode, no_quote = FALSE)
 	if(has_language(language))
 		var/atom/movable/AM = speaker.GetSource()
+		if(!should_translate_messages())
+			return no_quote ? raw_message : (AM ? AM.say_quote(raw_message, spans, message_mode, language) : speaker.say_quote(raw_message, spans, message_mode, language))
+		var/target_language_key = get_translation_language()
 		if(AM) //Basically means "if the speaker is virtual"
+			var/source_language_key = AM.get_translation_language()
+			if(target_language_key != source_language_key)
+				var/translated = SStranslator.translate(raw_message, source = source_language_key, target = target_language_key)
+				if(translated)
+					raw_message = translated
 			return no_quote ? raw_message : AM.say_quote(raw_message, spans, message_mode, language)
 		else
+			var/source_language_key = speaker.get_translation_language()
+			if(target_language_key != source_language_key)
+				var/translated = SStranslator.translate(raw_message, source = source_language_key, target = target_language_key)
+				if(translated)
+					raw_message = translated
 			return no_quote ? raw_message : speaker.say_quote(raw_message, spans, message_mode, language)
 	else if(language)
 		var/atom/movable/AM = speaker.GetSource()

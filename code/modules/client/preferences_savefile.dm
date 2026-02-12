@@ -199,6 +199,8 @@
 	READ_FILE(S["max_chat_length"], max_chat_length)
 	READ_FILE(S["see_chat_non_mob"], see_chat_non_mob)
 	READ_FILE(S["see_rc_emotes"], see_rc_emotes)
+	READ_FILE(S["translate_messages"], translate_messages)
+	READ_FILE(S["translation_language"], translation_language)
 
 	// Tgui options
 	READ_FILE(S["tgui_lock"], tgui_lock)
@@ -273,6 +275,8 @@
 	max_chat_length = sanitize_integer(max_chat_length, 1, CHAT_MESSAGE_MAX_LENGTH, initial(max_chat_length))
 	see_chat_non_mob = sanitize_integer(see_chat_non_mob, FALSE, TRUE, initial(see_chat_non_mob))
 	see_rc_emotes = sanitize_integer(see_rc_emotes, FALSE, TRUE, initial(see_rc_emotes))
+	translate_messages = sanitize_integer(translate_messages, FALSE, TRUE, initial(translate_messages))
+	translation_language = sanitize_inlist(translation_language, TRANSLATION_LANGUAGE_CODES, initial(translation_language))
 
 	tgui_lock = sanitize_integer(tgui_lock, FALSE, TRUE, initial(tgui_lock))
 	ui_scale = sanitize_integer(ui_scale, FALSE, TRUE, initial(ui_scale))
@@ -355,6 +359,8 @@
 	max_chat_length = sanitize_integer(max_chat_length, 1, CHAT_MESSAGE_MAX_LENGTH, initial(max_chat_length))
 	see_chat_non_mob = sanitize_integer(see_chat_non_mob, FALSE, TRUE, initial(see_chat_non_mob))
 	see_rc_emotes = sanitize_integer(see_rc_emotes, FALSE, TRUE, initial(see_rc_emotes))
+	translate_messages = sanitize_integer(translate_messages, FALSE, TRUE, initial(translate_messages))
+	translation_language = sanitize_inlist(translation_language, TRANSLATION_LANGUAGE_CODES, initial(translation_language))
 
 	tgui_lock = sanitize_integer(tgui_lock, FALSE, TRUE, initial(tgui_lock))
 	ui_scale = sanitize_integer(ui_scale, FALSE, TRUE, initial(ui_scale))
@@ -421,6 +427,8 @@
 	WRITE_FILE(S["max_chat_length"], max_chat_length)
 	WRITE_FILE(S["see_chat_non_mob"], see_chat_non_mob)
 	WRITE_FILE(S["see_rc_emotes"], see_rc_emotes)
+	WRITE_FILE(S["translate_messages"], translate_messages)
+	WRITE_FILE(S["translation_language"], translation_language)
 
 	// Tgui options
 	WRITE_FILE(S["tgui_lock"], tgui_lock)

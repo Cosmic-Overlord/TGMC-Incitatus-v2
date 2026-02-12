@@ -39,6 +39,8 @@ type GameSettingData = {
   multiz_performance: number;
   parallax: number;
   is_admin: number;
+  translate_messages: number;
+  translation_language: string;
 };
 
 type GearCustomizationData = {

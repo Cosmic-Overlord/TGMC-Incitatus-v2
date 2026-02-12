@@ -140,6 +140,8 @@
 			data["max_chat_length"] = max_chat_length
 			data["see_chat_non_mob"] = see_chat_non_mob
 			data["see_rc_emotes"] = see_rc_emotes
+			data["translate_messages"] = translate_messages
+			data["translation_language"] = translation_language
 			data["toggle_bump_attacking"] = toggle_bump_attacking
 			data["mute_others_combat_messages"] = mute_others_combat_messages
 			data["mute_self_combat_messages"] = mute_self_combat_messages
@@ -791,6 +793,15 @@
 			// Need to remove any currently shown
 			if(!show_typing && istype(user))
 				user.remove_all_indicators()
+
+		if("translate_messages")
+			translate_messages = !translate_messages
+
+		if("translation_language")
+			var/choice = tgui_input_list(ui.user, "Select your translation language:", "Translation language", TRANSLATION_LANGUAGE_CHOICES)
+			if(!choice)
+				return
+			translation_language = TRANSLATION_LANGUAGE_CHOICES[choice]
 
 		if("tooltips")
 			tooltips = !tooltips
