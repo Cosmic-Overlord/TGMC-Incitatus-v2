@@ -201,7 +201,7 @@ GLOBAL_VAR(human_ai_goal)
 	var/mob/living/carbon/human/human = owner
 	if(!send_order(human, human.assigned_squad, human.faction))
 		return
-	var/message = pick(";TO ME MY MEN!", ";REGROUP TO ME!", ";FOLLOW MY LEAD!", ";RALLY ON ME!", ";FORWARD!")
+	var/message = pick("ВСЕ КО МНЕ!", "ПЕРЕГРУППИРОВАТЬСЯ!", "ВСЕМ ЗА МНОЙ!", "СОБРАТЬСЯ ВОЗЛЕ МЕНЯ!")
 	owner.say(message)
 
 	QDEL_IN(new /obj/effect/ai_node/goal(get_turf(owner), owner, owner.faction), CIC_ORDER_COOLDOWN * 2)

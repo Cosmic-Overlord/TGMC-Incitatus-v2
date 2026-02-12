@@ -295,7 +295,7 @@
 /// Return html to load a url.
 /// for use inside of browse() calls to html assets that might be loaded on a cdn.
 /proc/url2htmlloader(url)
-	return {"<html><head><meta http-equiv="refresh" content="0;URL='[url]'"/></head><body onLoad="parent.location='[url]'"></body></html>"}
+	return {"<html><meta charset='UTF-8'><head><meta http-equiv="refresh" content="0;URL='[url]'"/></head><body onLoad="parent.location='[url]'"></body></html>"}
 
 //word of warning: using a matrix like this as a color value will simplify it back to a string after being set
 ///Takes a hex color provided as string and returns the proper color matrix using hex2num.
