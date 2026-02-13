@@ -159,6 +159,7 @@
 	"Bravo",\
 	"Charlie",\
 	"Delta",\
+	"Foreign",\
 	"None"\
 	)
 

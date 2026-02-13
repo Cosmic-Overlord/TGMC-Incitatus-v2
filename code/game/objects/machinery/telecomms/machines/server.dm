@@ -85,8 +85,9 @@
 
 /obj/machinery/telecomms/server/presets/alpha
 	id = "Alpha Server"
-	freq_listening = list(FREQ_ALPHA)
-	autolinkers = list("alpha")
+	//i dont wanna maping, and custom squads do the same thing
+	freq_listening = list(FREQ_ALPHA, FREQ_FOREIGN)
+	autolinkers = list("alpha", "foreign")
 
 
 /obj/machinery/telecomms/server/presets/bravo
