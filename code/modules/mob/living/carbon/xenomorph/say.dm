@@ -48,7 +48,8 @@
 		if(!ghost?.client?.prefs || !(ghost.client.prefs.toggles_chat & CHAT_GHOSTHIVEMIND))
 			continue
 		var/track = FOLLOW_LINK(ghost, src)
-		ghost.show_message("[track] [hivemind_start()] [span_message("hisses, <b>'[message]'</b>")][hivemind_end()]", 2)
+		var/translated_message = ghost.lang_treat(src, get_default_language(), message, list(), null, TRUE)
+		ghost.show_message("[track] [hivemind_start()] [span_message("hisses, <b>'[translated_message]'</b>")][hivemind_end()]", 2)
 
 	var/list/tts_listeners = list()
 	for(var/mob/living/carbon/xenomorph/sister AS in hive.get_all_xenos())
@@ -63,7 +64,8 @@
 
 /mob/living/carbon/xenomorph/proc/receive_hivemind_message(mob/living/carbon/xenomorph/X, message)
 	var/follow_link = X != src ? "<a href='byond://?src=[REF(src)];watch_xeno_name=[REF(X)]'>(F)</a> " : ""
-	return show_message("[follow_link][X.hivemind_start()][span_message(" hisses, <b>'[message]'</b>")][X.hivemind_end()]", 2)
+	var/translated_message = lang_treat(X, X.get_default_language(), message, list(), null, TRUE)
+	return show_message("[follow_link][X.hivemind_start()][span_message(" hisses, <b>'[translated_message]'</b>")][X.hivemind_end()]", 2)
 
 
 /mob/living/carbon/xenomorph/get_saymode(message, talk_key)
