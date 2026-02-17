@@ -996,31 +996,18 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 
 
 /datum/action/ability/xeno_action/psychic_whisper/action_activate()
-	var/list/target_list = list()
-	for(var/mob/living/possible_target in view(WORLD_VIEW, xeno_owner))
-		if(possible_target == xeno_owner || !possible_target.client || isxeno(possible_target))
-			continue
-		target_list += possible_target
-
-	if(!length(target_list))
-		to_chat(xeno_owner, span_warning("There's nobody nearby to whisper to."))
-		return
-
-	var/mob/living/L = tgui_input_list(xeno_owner, "Target", "Send a Psychic Whisper to whom?", target_list)
-	if(!L)
-		return
-
 	if(!xeno_owner.check_state())
 		return
-
-	var/msg = stripped_input("Message:", "Psychic Whisper")
+	var/msg = stripped_input(xeno_owner, "Message:", "Psychic Whisper")
 	if(!msg)
 		return
-
-	log_directed_talk(xeno_owner, L, msg, LOG_SAY, "psychic whisper")
-	to_chat(L, span_alien("You hear a strange, alien voice in your head. <i>\"[msg]\"</i>"))
-	to_chat(xeno_owner, span_xenonotice("We said: \"[msg]\" to [L]"))
-	message_admins("[xeno_owner] has sent [L] this psychic message: \"[msg]\" at [ADMIN_VERBOSEJMP(xeno_owner)].")
+	log_directed_talk(xeno_owner, xeno_owner, msg, LOG_SAY, "psychic whisper")
+	var/styled_msg = "<span style='color: #ff00ff; font-family: Georgia, serif; text-shadow: 0 0 8px #ff00ff, 1px 1px 2px #000000; font-size: 1.2em;'><b>[xeno_owner] Психически шепчет: \"[msg]\"</b></span>"
+	for(var/mob/M in viewers(7, xeno_owner))
+		to_chat(M, styled_msg)
+	flick("purple_thought_bubble", xeno_owner.chat_color)
+	message_admins("[key_name_admin(xeno_owner)] has psychic whispered: \"[msg]\" at [ADMIN_VERBOSEJMP(xeno_owner)].")
+	return TRUE
 
 // ***************************************
 // *********** Lay Egg
