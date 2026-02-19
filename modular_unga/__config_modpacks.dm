@@ -7,6 +7,6 @@
 
 /// FEATURES
 
-/// PEREVODY
+/// RU_TRANSLATE
 
 /// REVERTS

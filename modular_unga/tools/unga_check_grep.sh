@@ -11,10 +11,8 @@ echo -e "${BLUE}Re-running grep checks, but looking in modular_unga/...${NC}"
 # Run the linters again, but modular massmeta code (features).
 sed 's/code\/\*\*\/\*\*.dm/modular_unga\/features\/\*\*\/\*\*.dm/g' <tools/ci/check_grep.sh | bash
 
-echo -e "${BLUE}Re-running grep checks, but looking in modular_unga/master_files/...${NC}"
-
-# Run the linters again, but modular massmeta code (perevody = translations).
-sed 's/code\/\*\*\/\*\*.dm/modular_unga\/perevody\/\*\*\/\*\*.dm/g' <tools/ci/check_grep.sh | bash
+# Run the linters again, but modular massmeta code (ru_translate = translations).
+sed 's/code\/\*\*\/\*\*.dm/modular_unga\/ru_translate\/\*\*\/\*\*.dm/g' <tools/ci/check_grep.sh | bash
 
 # Run the linters again, but modular massmeta code (reverts).
 sed 's/code\/\*\*\/\*\*.dm/modular_unga\/reverts\/\*\*\/\*\*.dm/g' <tools/ci/check_grep.sh | bash
