@@ -90,6 +90,7 @@ export const DmTarget = new Juke.Target({
     'html/**',
     'icons/**',
     'interface/**',
+    'modular_unga/**', // RU TGMC EDIT, DO NOT DELETE THIS (Making the CBT work)
     `${DME_NAME}.dme`,
     'tgui/public/tgui.html',
     NamedVersionFile,
