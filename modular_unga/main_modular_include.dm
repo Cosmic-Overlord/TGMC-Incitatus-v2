@@ -1,41 +1,17 @@
-// All new mod's includes here
-// Some modules can be easy excludes from code compile sequence by commenting #define you need to remove in code\__DEFINES\__meta_modpaks_includes.dm
-// Keep in mind, that module may not be only in modular folder but also embedded directly in TG code and covered with #ifdef - #endif structure
+// Все новые модули включены здесь
+// Некоторые модули можно легко исключить из последовательности компиляции кода, закомментировав строку которая начинается с #define
+// Которую необходимо удалить в файле code\__DEFINES\__unga_modpaks_includes.dm
+// Имейте в виду, что модуль может находиться не только в папке modular, но и быть встроен непосредственно в код TGMC и покрыт структурой #ifdef - #endif
 
 #include "__modpack\assets_modpacks.dm"
 #include "__modpack\modpack.dm" //modpack obj
 #include "__modpack\modpacks_subsystem.dm" //actually mods subsystem + tgui in "tgui/packages/tgui/interfaces/Modpacks.tsx"
 
 /* --FEATURES-- */
+// #include "features\..."
 
-#if HOOKAHS
-	#include "features\hookahs\includes.dm"
-#endif
-
-#include "features\additional_circuit\includes.dm"
-#include "features\butt_farts\includes.dm"
-#if CHEBUREK_CAR
-	#include "features\cheburek_car\includes.dm"
-#endif
-#include "features\venom_knife\includes.dm"
-#include "features\skill_issue\includes.dm"
-#if ROBUST_ENJOYER
-	#include "features\robust_enjoyer\includes.dm"
-#endif
 /* -- REVERTS -- */
-
-#include "reverts\revert_glasses_protect_welding\includes.dm"
-#include "reverts\old_clothing\includes.dm"
+// #include "reverts\..."
 
 /* --TRANSLATIONS-- */
-
-#include "ru_translate\ru_ai_laws\includes.dm"
-#include "ru_translate\ru_codewords\includes.dm"
-
-#if RU_CRAYONS
-	#include "ru_translate\ru_crayons\includes.dm"
-#endif
-#include "ru_translate\ru_tweak_say_fonts\includes.dm"
-#if RU_VENDORS
-	#include "ru_translate\ru_vendors\includes.dm"
-#endif
+// #include "ru_translate\..."
