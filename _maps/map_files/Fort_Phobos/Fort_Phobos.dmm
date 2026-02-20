@@ -241,22 +241,7 @@
 /turf/open/floor/mainship/sterile/dark,
 /area/mainship/patrol_base/som/medical)
 "df" = (
-/obj/structure/table/mainship/nometal,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
+/obj/machinery/vending/attachment,
 /turf/open/floor/plating/ground/concrete,
 /area/mainship/patrol_base/som)
 "ds" = (
@@ -612,25 +597,10 @@
 	},
 /area/mainship/patrol_base/som/barracks)
 "hE" = (
-/obj/structure/table/mainship/nometal,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
 /obj/machinery/camera/autoname/mainship/somship{
 	dir = 1
 	},
+/obj/machinery/vending/attachment,
 /turf/open/floor/plating/ground/concrete,
 /area/mainship/patrol_base/som)
 "hI" = (
@@ -1769,6 +1739,7 @@
 /obj/effect/turf_decal/trimline/blue/line{
 	dir = 10
 	},
+/obj/effect/turf_decal/loading_area/red,
 /turf/open/floor/plating/ground/concrete,
 /area/mainship/patrol_base/som)
 "vX" = (
@@ -3982,6 +3953,10 @@
 	dir = 1
 	},
 /area/mainship/patrol_base/som/hanger)
+"Xq" = (
+/obj/effect/turf_decal/loading_area/red,
+/turf/open/floor/plating/ground/concrete,
+/area/mainship/patrol_base/som)
 "Xs" = (
 /obj/machinery/light/mainship{
 	dir = 4
@@ -12557,7 +12532,7 @@ Aw
 Aw
 Aw
 Aw
-Aw
+Xq
 hE
 vz
 We
