@@ -80,7 +80,7 @@ const FeaturesTable = () => {
     <Input
       placeholder="Искать модпак-фичу..."
       fluid
-      onChange={(e, value) => setSearchText(value)}
+      onChange={(value) => setSearchText(value)}
     />
   );
 
@@ -174,7 +174,7 @@ const TranslationsTable = () => {
     <Input
       placeholder="Искать модпак-перевод..."
       fluid
-      onChange={(e, value) => setSearchText(value)}
+      onChange={(value) => setSearchText(value)}
     />
   );
 
@@ -270,7 +270,7 @@ const RevertsTable = () => {
     <Input
       placeholder="Искать модпак-скилл ишуя ТГ к*дера..."
       fluid
-      onChange={(e, value) => setSearchText(value)}
+      onChange={(value) => setSearchText(value)}
     />
   );
 
