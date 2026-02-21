@@ -1,4 +1,5 @@
-// THIS IS A MASSMETA UI FILE
+// THIS IS A RU TGMC UI FILE
+// DO NOT REMOVE OR MOVE THIS FILE
 import { useState } from 'react';
 import {
   Box,
@@ -79,7 +80,7 @@ const FeaturesTable = () => {
     <Input
       placeholder="Искать модпак-фичу..."
       fluid
-      onInput={(e, value) => setSearchText(value)}
+      onChange={(e, value) => setSearchText(value)}
     />
   );
 
@@ -173,7 +174,7 @@ const TranslationsTable = () => {
     <Input
       placeholder="Искать модпак-перевод..."
       fluid
-      onInput={(e, value) => setSearchText(value)}
+      onChange={(e, value) => setSearchText(value)}
     />
   );
 
@@ -269,7 +270,7 @@ const RevertsTable = () => {
     <Input
       placeholder="Искать модпак-скилл ишуя ТГ к*дера..."
       fluid
-      onInput={(e, value) => setSearchText(value)}
+      onChange={(e, value) => setSearchText(value)}
     />
   );
 
