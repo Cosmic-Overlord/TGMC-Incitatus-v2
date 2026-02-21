@@ -2554,7 +2554,6 @@
 #include "code\modules\xenomorph\xeno_turret.dm"
 #include "code\modules\xenomorph\xenoplant.dm"
 #include "code\modules\xenomorph\xenotowers.dm"
-#include "modular_unga\main_modular_include.dm"
 #include "interface\interface.dm"
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
@@ -2567,4 +2566,5 @@
 #include "interface\fonts\spess_font.dm"
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
+#include "modular_unga\main_modular_include.dm"
 // END_INCLUDE
