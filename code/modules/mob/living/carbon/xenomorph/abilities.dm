@@ -994,7 +994,6 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 	use_state_flags = ABILITY_USE_LYING
 	target_flags = ABILITY_MOB_TARGET
 
-
 /datum/action/ability/xeno_action/psychic_whisper/action_activate()
 	if(!xeno_owner.check_state())
 		return
@@ -1002,7 +1001,7 @@ GLOBAL_LIST_INIT(xeno_resin_costs, list(
 	if(!msg)
 		return
 	log_directed_talk(xeno_owner, xeno_owner, msg, LOG_SAY, "psychic whisper")
-	var/styled_msg = "<span style='color: #ff00ff; font-family: Georgia, serif; text-shadow: 0 0 8px #ff00ff, 1px 1px 2px #000000; font-size: 1.2em;'><b>[xeno_owner] Психически шепчет: \"[msg]\"</b></span>"
+	var/styled_msg = "<span style='color: #ff00ff; font-family: Georgia, serif; text-shadow: 0 0 8px #ff00ff, 1px 1px 2px #000000; font-size: 1.2em;'><b>[xeno_owner] Has Psychic whispered: \"[msg]\"</b></span>"
 	for(var/mob/M in viewers(7, xeno_owner))
 		to_chat(M, styled_msg)
 	flick("purple_thought_bubble", xeno_owner.chat_color)
