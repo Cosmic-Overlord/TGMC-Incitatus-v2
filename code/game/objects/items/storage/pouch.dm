@@ -962,8 +962,8 @@
 
 /obj/item/storage/pouch/shotgun/Initialize(mapload, ...)
 	. = ..()
-	storage_datum.sprite_slots = 4
-	storage_datum.storage_slots = 4
+	storage_datum.sprite_slots = 7
+	storage_datum.storage_slots = 7
 	storage_datum.draw_mode = FALSE
 	storage_datum.set_holdable(can_hold_list = list(/obj/item/ammo_magazine/handful))
 
