@@ -2037,3 +2037,38 @@
 			/obj/item/mecha_parts/mecha_equipment/ability/smoke/cloak_smoke = -1,
 		),
 	)
+
+/obj/machinery/vending/attachment //Incitatus-ADD
+	name = "\improper Attachment Master"
+	desc = "A large vendor for vending attacment."
+	icon_state = "requisitionop"
+	icon_vend = "requisitionop-vend"
+	icon_deny = "requisitionop-deny"
+	wrenchable = FALSE
+	products = list(
+			/obj/item/attachable/bayonet/converted = -1,
+			/obj/item/attachable/compensator = -1,	
+			/obj/item/attachable/extended_barrel = -1,
+			/obj/item/attachable/suppressor = -1,
+			/obj/item/attachable/heavy_barrel = -1,
+			/obj/item/attachable/lace = -1,
+			/obj/item/attachable/flashlight = -1,
+			/obj/item/attachable/flashlight/under = -1,
+			/obj/item/attachable/magnetic_harness = -1,
+			/obj/item/attachable/reddot = -1,
+			/obj/item/attachable/motiondetector = -1,
+			/obj/item/attachable/scope/marine = -1,
+			/obj/item/attachable/scope/mini = -1,
+			/obj/item/attachable/angledgrip = -1,
+			/obj/item/attachable/verticalgrip = -1,
+			/obj/item/attachable/foldable/bipod = -1,
+			/obj/item/attachable/gyro = -1,
+			/obj/item/attachable/lasersight = -1,
+			/obj/item/attachable/burstfire_assembly = -1,
+			/obj/item/weapon/gun/shotgun/combat/masterkey = -1,
+			/obj/item/weapon/gun/grenade_launcher/underslung = -1,
+			/obj/item/weapon/gun/flamer/mini_flamer = -1,
+			/obj/item/ammo_magazine/flamer_tank/mini = -1,
+			/obj/item/attachable/stock/t76 = -1,
+			/obj/item/attachable/flamer_nozzle = -1,
+		)

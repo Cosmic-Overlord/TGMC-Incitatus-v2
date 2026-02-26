@@ -1702,6 +1702,9 @@
 	},
 /area/mainship/patrol_base/hanger)
 "xU" = (
+/obj/effect/turf_decal/loading_area/white{
+	dir = 1
+	},
 /turf/open/floor/mainship/black/corner{
 	dir = 4
 	},
@@ -2442,28 +2445,7 @@
 /turf/open/floor/mainship/mono,
 /area/mainship/patrol_base)
 "Hs" = (
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/structure/table/mainship/nometal,
+/obj/machinery/vending/attachment,
 /turf/open/floor/mainship/black{
 	dir = 5
 	},
@@ -2938,6 +2920,7 @@
 	},
 /area/mainship/patrol_base/hanger)
 "On" = (
+/obj/effect/turf_decal/loading_area/white,
 /turf/open/floor/mainship/black/corner,
 /area/mainship/patrol_base/barracks)
 "Op" = (
@@ -3222,28 +3205,7 @@
 /turf/open/floor/prison/sterilewhite,
 /area/mainship/patrol_base)
 "SO" = (
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/item/attachable/magnetic_harness,
-/obj/structure/table/mainship/nometal,
+/obj/machinery/vending/attachment,
 /turf/open/floor/mainship/black{
 	dir = 6
 	},
