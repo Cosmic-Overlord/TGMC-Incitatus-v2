@@ -166,6 +166,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/max_chat_length = CHAT_MESSAGE_MAX_LENGTH
 	///Whether emotes will be displayed on runechat. Requires chat_on_map to have effect.
 	var/see_rc_emotes = TRUE
+	///Whether messages should be translated
+	var/translate_messages = FALSE
+	///Target language for translation
+	var/translation_language = "en"
 
 	///Should we automatically fit the viewport?
 	var/auto_fit_viewport = TRUE
