@@ -1,5 +1,5 @@
 ADMIN_VERB(player_panel, R_ADMIN, "Player Panel", "View the player panel", ADMIN_CATEGORY_MAIN)
-	var/dat = {"<html>
+	var/dat = {"<html><meta charset='UTF-8'>
 
 		<head>
 			<script type='text/javascript'>
