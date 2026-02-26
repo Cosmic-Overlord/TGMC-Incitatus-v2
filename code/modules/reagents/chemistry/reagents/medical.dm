@@ -109,7 +109,7 @@
 
 /datum/reagent/medicine/paracetamol/on_mob_life(mob/living/L, metabolism)
 	L.reagent_pain_modifier += PAIN_REDUCTION_HEAVY
-	L.heal_overall_damage(0.2*effect_str, 0.2*effect_str)
+	L.heal_overall_damage(0.5*effect_str, 0.5*effect_str)
 	L.adjustToxLoss(-0.1*effect_str)
 	L.adjustStaminaLoss(-effect_str)
 	return ..()

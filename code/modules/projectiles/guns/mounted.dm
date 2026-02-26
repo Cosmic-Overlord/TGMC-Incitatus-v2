@@ -516,6 +516,7 @@
 		/obj/item/attachable/flashlight/under,
 		/obj/item/attachable/stock/clf_heavyrifle,
 		/obj/item/attachable/scope,
+		/obj/item/attachable/scope/marine,
 	)
 
 	starting_attachment_types = list(/obj/item/attachable/stock/clf_heavyrifle)
