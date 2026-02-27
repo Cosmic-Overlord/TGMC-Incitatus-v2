@@ -4,6 +4,10 @@
 	silo_scaling = 2
 	round_type_flags = MODE_INFESTATION|MODE_LATE_OPENING_SHUTTER_TIMER|MODE_XENO_RULER|MODE_PSY_POINTS|MODE_PSY_POINTS_ADVANCED|MODE_HIJACK_POSSIBLE|MODE_SILO_RESPAWN|MODE_SILOS_SPAWN_MINIONS|MODE_ALLOW_XENO_QUICKBUILD|MODE_FORCE_CUSTOMSQUAD_UI|MODE_MUTATIONS_OBTAINABLE
 	xeno_abilities_flags = ABILITY_NUCLEARWAR
+	///Controls if nukes and disk spawners are created and nuclear victory conditions apply.
+	var/allow_nuke = TRUE
+	///If TRUE, silo collapse only starts once there are no silos and no corrupted generators.
+	var/require_uncorrupted_generators_for_silo_collapse = TRUE
 	valid_job_types = list(
 		/datum/job/terragov/command/captain = 1,
 		/datum/job/terragov/command/fieldcommander = 1,
@@ -58,13 +62,14 @@
 	for(var/mob/living/carbon/xenomorph/larva/xeno in GLOB.alive_xeno_list)
 		xeno.evolution_stored = xeno.xeno_caste.evolution_threshold //Immediate roundstart evo for larva.
 
-	for(var/i in GLOB.nuke_spawn_locs)
-		new /obj/machinery/nuclearbomb(i)
-	generate_nuke_disk_spawners()
+	if(allow_nuke)
+		for(var/i in GLOB.nuke_spawn_locs)
+			new /obj/machinery/nuclearbomb(i)
+		generate_nuke_disk_spawners()
 
-	RegisterSignal(SSdcs, COMSIG_GLOB_NUKE_EXPLODED, PROC_REF(on_nuclear_explosion))
-	RegisterSignal(SSdcs, COMSIG_GLOB_NUKE_DEFUSED, PROC_REF(on_nuclear_defuse))
-	RegisterSignal(SSdcs, COMSIG_GLOB_NUKE_START, PROC_REF(on_nuke_started))
+		RegisterSignal(SSdcs, COMSIG_GLOB_NUKE_EXPLODED, PROC_REF(on_nuclear_explosion))
+		RegisterSignal(SSdcs, COMSIG_GLOB_NUKE_DEFUSED, PROC_REF(on_nuclear_defuse))
+		RegisterSignal(SSdcs, COMSIG_GLOB_NUKE_START, PROC_REF(on_nuke_started))
 
 ///Called by [/datum/hive_status/normal/handle_ruler_timer()] after [NUCLEAR_WAR_HIVEMIND_COLLAPSE] elapses to end the round
 /datum/game_mode/infestation/nuclear_war/orphan_hivemind_collapse()
@@ -95,7 +100,7 @@
 			deltimer(siloless_hive_timer)
 			siloless_hive_timer = null
 		return
-	if(GLOB.corrupted_generators)
+	if(require_uncorrupted_generators_for_silo_collapse && GLOB.corrupted_generators)
 		if(siloless_hive_timer)
 			deltimer(siloless_hive_timer)
 			siloless_hive_timer = null
@@ -145,19 +150,20 @@
 		round_finished = MODE_INFESTATION_X_MINOR
 		return TRUE
 
-	switch(planet_nuked)
-		if(INFESTATION_NUKE_COMPLETED)
-			message_admins("Round finished: [MODE_INFESTATION_M_MINOR]") //marines managed to nuke the colony
-			round_finished = MODE_INFESTATION_M_MINOR
-			return TRUE
-		if(INFESTATION_NUKE_COMPLETED_SHIPSIDE)
-			message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //marines managed to nuke their own ship
-			round_finished = MODE_INFESTATION_X_MAJOR
-			return TRUE
-		if(INFESTATION_NUKE_COMPLETED_OTHER)
-			message_admins("Round finished: [MODE_INFESTATION_X_MINOR]") //marines managed to nuke transit or something
-			round_finished = MODE_INFESTATION_X_MINOR
-			return TRUE
+	if(allow_nuke)
+		switch(planet_nuked)
+			if(INFESTATION_NUKE_COMPLETED)
+				message_admins("Round finished: [MODE_INFESTATION_M_MINOR]") //marines managed to nuke the colony
+				round_finished = MODE_INFESTATION_M_MINOR
+				return TRUE
+			if(INFESTATION_NUKE_COMPLETED_SHIPSIDE)
+				message_admins("Round finished: [MODE_INFESTATION_X_MAJOR]") //marines managed to nuke their own ship
+				round_finished = MODE_INFESTATION_X_MAJOR
+				return TRUE
+			if(INFESTATION_NUKE_COMPLETED_OTHER)
+				message_admins("Round finished: [MODE_INFESTATION_X_MINOR]") //marines managed to nuke transit or something
+				round_finished = MODE_INFESTATION_X_MINOR
+				return TRUE
 
 	if(!num_humans)
 		if(!num_xenos)
