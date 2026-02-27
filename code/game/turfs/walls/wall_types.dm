@@ -262,18 +262,15 @@
 
 /turf/closed/wall/indestructible/splashscreen
 	name = "Space Station 13"
+	icon = 'icons/misc/title.dmi'
+	icon_state = "title_painting1"
 	plane = SPLASHSCREEN_PLANE
-	icon_state = ""
 	pixel_x = -64
 
-INITIALIZE_IMMEDIATE(/turf/closed/wall/indestructible/splashscreen)
-/turf/closed/wall/indestructible/splashscreen/Initialize(mapload, ...)
-	. = ..()
-	var/prefix = "icons/misc/lobby_art/"
-	var/list/lobby_art = flist(prefix)
-	if(!length(lobby_art))
-		return
-	icon = icon("[prefix]" + pick(lobby_art))
+/turf/closed/wall/indestructible/splashscreen/New()
+	..()
+	if(icon_state == "title_painting1")
+		icon_state = "title_painting[rand(0,40)]"
 
 /turf/closed/wall/indestructible/other
 	icon_state = "r_wall"
