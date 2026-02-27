@@ -875,6 +875,7 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 #define BRAVO_SQUAD "bravo_squad"
 #define CHARLIE_SQUAD "charlie_squad"
 #define DELTA_SQUAD "delta_squad"
+#define FOREIGN_SQUAD "foreign_squad"
 
 #define ZULU_SQUAD "zulu_squad"
 #define YANKEE_SQUAD "yankee_squad"

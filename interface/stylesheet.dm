@@ -134,6 +134,7 @@ a.popt {text-decoration: none;}
 .bravoradio				{color: #C68610;}
 .charlieradio			{color: #AA55AA;}
 .deltaradio				{color: #007FCF;}
+.foreignradio			{color: #3F7D30;}
 
 .zuluradio				{color: #FF6A00;}
 .yankeeradio			{color: #009999;}

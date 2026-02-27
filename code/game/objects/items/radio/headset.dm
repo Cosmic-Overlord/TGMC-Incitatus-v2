@@ -9,7 +9,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_ALPHA = RADIO_TOKEN_ALPHA,
 	RADIO_CHANNEL_BRAVO = RADIO_TOKEN_BRAVO,
 	RADIO_CHANNEL_CHARLIE = RADIO_TOKEN_CHARLIE,
-	RADIO_CHANNEL_DELTA = RADIO_TOKEN_DELTA
+	RADIO_CHANNEL_DELTA = RADIO_TOKEN_DELTA,
+	RADIO_CHANNEL_FOREIGN = RADIO_TOKEN_FOREIGN
 ))
 
 
@@ -591,6 +592,33 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/mainship/marine/delta/med
 	name = "marine delta corpsman radio headset"
+	keyslot2 = /obj/item/encryptionkey/med
+
+/obj/item/radio/headset/mainship/marine/foreign
+	name = "marine foreign radio headset"
+	icon_state = "headset_marine_foreign"
+	frequency = FREQ_FOREIGN
+	minimap_type = /datum/action/minimap/marine
+
+/obj/item/radio/headset/mainship/marine/foreign/LateInitialize()
+	. = ..()
+	camera.network += list("foreign")
+
+
+/obj/item/radio/headset/mainship/marine/foreign/lead
+	name = "marine foreign leader radio headset"
+	keyslot2 = /obj/item/encryptionkey/squadlead
+	use_command = TRUE
+	command = TRUE
+
+
+/obj/item/radio/headset/mainship/marine/foreign/engi
+	name = "marine foreign engineer radio headset"
+	keyslot2 = /obj/item/encryptionkey/engi
+
+
+/obj/item/radio/headset/mainship/marine/foreign/med
+	name = "marine foreign corpsman radio headset"
 	keyslot2 = /obj/item/encryptionkey/med
 
 /obj/item/radio/headset/mainship/marine/generic

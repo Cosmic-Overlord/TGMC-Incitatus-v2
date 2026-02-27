@@ -322,6 +322,7 @@ Important note: colors can end up significantly different from the basic html pi
 #define COLOR_SQUAD_BRAVO "#ffc32d" // rgb(255,195,45)
 #define COLOR_SQUAD_CHARLIE "#c864c8" // rgb(200,100,200)
 #define COLOR_SQUAD_DELTA "#4148c8" // rgb(65,72,200)
+#define COLOR_SQUAD_FOREIGN "#3f7d30" // rgb(65,72,200)
 
 #define COLOR_SQUAD_ZULU "#FF6A00" //rgb(255,106,0)
 #define COLOR_SQUAD_YANKEE "#009999" // rgb(0, 153, 153)
