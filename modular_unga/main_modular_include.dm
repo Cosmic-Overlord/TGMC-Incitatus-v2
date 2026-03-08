@@ -9,6 +9,7 @@
 
 /* --FEATURES-- */
 // #include "features\..."
+#include "features/psychic_whisper_rework/includes.dm"
 
 /* -- REVERTS -- */
 // #include "reverts\..."
