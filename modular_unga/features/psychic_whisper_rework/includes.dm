@@ -8,4 +8,4 @@
 	name = "Psychic Whisper Rework"
 	group = "Features"
 	desc = "Переделка способности Psychic whisper: увеличен радиус и новый стиль текста."
-	author = "ТвойНик"
+	author = "SIbra"
